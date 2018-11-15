@@ -3,7 +3,7 @@
 dotfile_dir: "{{playbook_dir}}/config"
 license_dir: "{{playbook_dir}}/license"
 
-app_store_email: "jcommu@gmail.com"
+# app_store_email: "jcommu@gmail.com"
 
 osx_settings_file: "{{dotfile_dir}}/.osx"
 terminal_theme_file: "{{dotfile_dir}}/Solarized-Dark.terminal"
@@ -16,12 +16,11 @@ dock_apps:
   - { name: Visual Studio Code, pos: 5, path: "/Applications/Visual Studio Code.app"}
   - { name: Microsoft Outlook,  pos: 6, path: "/Applications/Microsoft Outlook.app"}
   - { name: Steam,              pos: 7, path: "/Applications/Steam.app"}
-  - { name: OpenEmu,            pos: 8, path: "/Applications/OpenEmu.app"}
+  # - { name: OpenEmu,            pos: 8, path: "/Applications/OpenEmu.app"}
 
 dock_folders:
   - { source: "~/Downloads",   view: fan, display: stack, sort: dateadded }
-  - { source: "~/Documents",   view: fan, display: stack, sort: dateadded }
-  - { source: "~/Development", view: fan, display: stack, sort: dateadded }
+  # - { source: "~/Documents",   view: fan, display: stack, sort: dateadded }
 
 packages:
   #Brew-Tap
@@ -37,7 +36,7 @@ packages:
   - { name: wget,                   source: brew }
   - { name: bash-completion,       source: brew }
   - { name: zsh-completions,        source: brew }
-  
+
   - name: ruby
     source: brew
     packages:
@@ -87,7 +86,7 @@ packages:
 
   - name: iterm2
     source: brew-cask
-    dotfiles: 
+    dotfiles:
       - { src: "{{dotfile_dir}}/.inputrc", dest: "~/.inputrc" }
       - { src: "{{dotfile_dir}}/.hushlogin", dest: "~/.hushlogin" }
 
@@ -106,17 +105,17 @@ packages:
       - { name: CoenraadS.bracket-pair-colorizer }
       - { name: cstuder.gitlab-ci-validator }
       - { name: mauve.terraform }
-    dotfiles: 
+    dotfiles:
       - { src: "{{dotfile_dir}}/settings.json", dest: "~/Library/Application\ Support/Code/User/settings.json" }
 
   - name: spotify
     source: brew-cask
-    #licenses: 
+    #licenses:
     #  - { src: "{{playbook_dir}}/licenses/watch-sources.bnk", dest: "~/Library/Application Support/Spotify/Users/fgimian-user/watch-sources.bnk" }
 
-  - name: 1password
-    source: brew-cask
-    #licenses: 
+  # - name: 1password
+  #   source: brew-cask
+    #licenses:
     #  - { src: "{{playbook_dir}}/licenses/License.onepassword-license", dest: "~/Library/Group Containers/2BUA8C4S2C.com.agilebits/License/License.onepassword-license"}
     plists:
       - { domain: com.agilebits.onepassword6, key: WelcomeWindowShown,                    type: bool, value: true }
@@ -129,7 +128,7 @@ packages:
       - { domain: 2BUA8C4S2C.com.agilebits.onepassword6-helper, key: autosave,            type: bool, value: false }
 
   - name: microsoft-office
-    source: brew-cask 
+    source: brew-cask
     plists:
       - { domain: com.microsoft.Word,        key: kSubUIAppCompletedFirstRunSetup1507, type: bool, value: true }
       - { domain: com.microsoft.Excel,       key: kSubUIAppCompletedFirstRunSetup1507, type: bool, value: true }
@@ -143,13 +142,11 @@ packages:
   - { name: font-sharetechmono-nerd-font-mono, source: brew-cask }
   - { name: font-fauna-one,                    source: brew-cask }
 
-  #Mac App Store
-  - { name: Blackmagic Disk Speed Test, id: 425264550, source: app-store }
-
-  - name: DaisyDisk
-    source: app-store
-    id: 918858936
-    #licenses: 
+  # #Mac App Store
+  # - { name: Blackmagic Disk Speed Test, id: 425264550, source: app-store }
+  #
+  # - name: DaisyDisk
+  #   source: app-store
+  #   id: 918858936
+    #licenses:
     #  - { src: "{{playbook_dir}}/licenses/License.DaisyDisk", dest: "~/Library/Application Support/DaisyDisk/License.DaisyDisk" }
-
- 
